@@ -179,7 +179,7 @@ class FirebaseChatCore {
       type: types.RoomType.direct,
       users: users,
       imageUrl: otherUser.imageUrl,
-      name: otherUser.firstName
+      name: otherUser.firstName,
     );
   }
 
@@ -198,7 +198,7 @@ class FirebaseChatCore {
       'metadata': user.metadata,
       'role': user.role?.toShortString(),
       'updatedAt': FieldValue.serverTimestamp(),
-    },SetOptions(merge: true));
+    },SetOptions(merge: true),);
   }
 
   /// Removes message document.

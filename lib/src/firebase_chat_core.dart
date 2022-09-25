@@ -164,9 +164,9 @@ class FirebaseChatCore {
         .collection(config.roomsCollectionName)
         .add({
       'createdAt': FieldValue.serverTimestamp(),
-      'imageUrl': null,
+      'imageUrl': otherUser.imageUrl,
       'metadata': metadata,
-      'name': null,
+      'name': otherUser.firstName,
       'type': types.RoomType.direct.toShortString(),
       'updatedAt': FieldValue.serverTimestamp(),
       'userIds': userIds,
@@ -178,6 +178,8 @@ class FirebaseChatCore {
       metadata: metadata,
       type: types.RoomType.direct,
       users: users,
+      imageUrl: otherUser.imageUrl,
+      name: otherUser.firstName
     );
   }
 

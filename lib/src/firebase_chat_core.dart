@@ -381,7 +381,7 @@ class FirebaseChatCore {
       await getFirebaseFirestore()
           .collection(config.roomsCollectionName)
           .doc(roomId)
-          .update({'updatedAt': FieldValue.serverTimestamp()});
+          .update({'updatedAt': FieldValue.serverTimestamp(),"metadata": {"lastMessages": partialMessage.text, "status": "send"},});
     }
   }
 
